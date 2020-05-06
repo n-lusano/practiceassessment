@@ -1,5 +1,6 @@
 import React from "react";
 
-export default function Title() {
-  return <h1>Welcome to AMS GPs</h1>;
+export default function Title(props) {
+  const { title } = props;
+  return <h1>{title}</h1>;
 }
