@@ -7,7 +7,7 @@ const areWeOpen = hour >= 8 && hour < 17 ? "OPEN" : "CLOSED";
 
 export default function PracticeHours() {
   return (
-    <div>
+    <div className="card PracticeHours">
       <p>
         We are: <strong>{areWeOpen}</strong>
       </p>

@@ -10,22 +10,22 @@ export default function NavBar() {
         exact
       >
         Home
-      </NavLink>{" "}
-      |{" "}
+      </NavLink>
+      {" | "}
       <NavLink
         activeStyle={{ fontWeight: "bold", color: "black" }}
         to="/doctorschedule"
       >
         Doctor Schedule
-      </NavLink>{" "}
-      |{" "}
+      </NavLink>
+      {" | "}
       <NavLink
         activeStyle={{ fontWeight: "bold", color: "black" }}
         to="/patientsignup"
       >
         Patient Signup
-      </NavLink>{" "}
-      |{" "}
+      </NavLink>
+      {" | "}
       <NavLink
         activeStyle={{ fontWeight: "bold", color: "black" }}
         to="/patientdatabase"

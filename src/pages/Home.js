@@ -10,12 +10,12 @@ export default function Home() {
       <PracticeHours />
       <p>
         <Link to="/doctorschedule">
-          <button>Who is on duty?</button>
+          <button type="button">Who is on duty?</button>
         </Link>
       </p>
       <p>
         <Link to="/patientsignup">
-          <button>I am a new patient</button>
+          <button type="button">I am a new patient</button>
         </Link>
       </p>
     </div>
