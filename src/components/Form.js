@@ -9,34 +9,26 @@ export default function Form() {
       [e.currentTarget.name]: e.currentTarget.value,
     });
 
-  console.log(input);
-
   return (
     <form>
       <div>
         <label>First name </label>
-      </div>
-      <div>
         <input type="text" name="firstName" onChange={handleInputChange} />
       </div>
       <div>
         <label>Last name </label>
+        <input type="text" name="lastName" onChange={handleInputChange} />
       </div>
-      <input type="text" name="lastName" onChange={handleInputChange} />
       <div>
         <label>Email </label>
+        <input type="text" name="email" onChange={handleInputChange} />
       </div>
-      <input type="text" name="email" onChange={handleInputChange} />
       <div>
         <label>Phone </label>
-      </div>
-      <div>
         <input type="text" name="phoneNumber" onChange={handleInputChange} />
       </div>
       <div>
         <label>Gender </label>
-      </div>
-      <div>
         {/* <input
                 type="text"
                 name="gender"
@@ -45,8 +37,6 @@ export default function Form() {
       </div>
       <div>
         <label>Date of birth </label>
-      </div>
-      <div>
         {/* <input
               type="text"
               name="dateOfBirth"
@@ -54,7 +44,7 @@ export default function Form() {
               /> */}
       </div>
       <div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onClick={console.log(input)} />
       </div>
     </form>
   );
