@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 
 export default function Form() {
-  const [input, setInput] = useState({});
+  const [formData, setFormData] = useState({});
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleInputChange = (e) =>
-    setInput({
-      ...input,
+  const handleInputChange = (e) => {
+    console.log(e.target.value);
+    setFormData({
+      ...formData,
       [e.currentTarget.name]: e.currentTarget.value,
     });
+  };
+
+  function submitForm() {
+    console.log("Submitting the form", formData);
+    setFormSubmitted(true);
+  }
+
+  if (formSubmitted) {
+    return <h3>Thank you!</h3>;
+  }
 
   return (
     <form>
@@ -44,7 +56,7 @@ export default function Form() {
               /> */}
       </div>
       <div>
-        <input type="submit" value="Submit" onClick={console.log(input)} />
+        <input type="button" value="Submit" onClick={submitForm} />
       </div>
     </form>
   );

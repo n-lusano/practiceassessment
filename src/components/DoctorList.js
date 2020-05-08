@@ -11,7 +11,7 @@ export default function DoctorList() {
         const response = await axios.get(
           `https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors`
         );
-        // console.log(response.data);
+        // console.log("Response.data test", response.data);
         setDoctors(response.data);
       } catch (error) {
         console.log(`This is the error message: ${error}`);
