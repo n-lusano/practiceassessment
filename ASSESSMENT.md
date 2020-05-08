@@ -7,13 +7,13 @@ Copy this this rubric into a file called: `ASSESSMENT.md`
 | 1 Navigation      | 5          | 5/5     | 0/5       |
 | 2 Contact Details | 4          | 4/4     | 0/4       |
 | 3 Availability    | 7          | 7/7     | 0/7       |
-| 4 Sign up         | 8          | 1.5/8   | 0/8       |
-| 5 Patient DB      | 16         | 0/16    | 0/16      |
+| 4 Sign up         | 8          | 8/8     | 0/8       |
+| 5 Patient DB      | 16         | 7.5/16  | 0/16      |
 | 6 Patient Details | 5          | 0/5     | 0/5       |
 | 7 Express server  | 7          | 0/7     | 0/7       |
 | 8 Styling         | 2          | 0/2     | 0/2       |
-| 9 Finishing up    | 6          | 0/6     | 0/6       |
-| Total             | 60         | 17.5/60 | 0/60      |
+| 9 Finishing up    | 6          | 6/6     | 0/6       |
+| Total             | 60         | 37.5/60 | 0/60      |
 
 | 1. Navigation - Criteria                                  | Points | Self | Evaluator |
 | --------------------------------------------------------- | ------ | ---- | --------- |
@@ -46,23 +46,23 @@ Copy this this rubric into a file called: `ASSESSMENT.md`
 | -------------------------------------------------------------------------------- | ------ | ---- | --------- |
 | A form is displayed on the Patient Signup page                                   | 1      | 1    |           |
 | The form has inputs for firstName, lastName, email, phoneNumber & submit         | 0.5    | 0.5  |           |
-| The form has a select input for gender, and a date input for dateOfBirth         | 0.5    |      |           |
-| The state of the form is controlled using React useState hook(s)                 | 2      |      |           |
-| When the form is submitted, the user input for all form fields is console.logged | 2      |      |           |
-| When the form has been submitted, we show a success message to the user          | 2      |      |           |
-| The success message is an alert, prompt or confirm popup                         | -1     |      |           |
-| Submitting the form refreshes the page                                           | -2     |      |           |
-| Total                                                                            | 8      | 1.5  |           |
+| The form has a select input for gender, and a date input for dateOfBirth         | 0.5    | 0.5  |           |
+| The state of the form is controlled using React useState hook(s)                 | 2      | 2    |           |
+| When the form is submitted, the user input for all form fields is console.logged | 2      | 2    |           |
+| When the form has been submitted, we show a success message to the user          | 2      | 2    |           |
+| The success message is an alert, prompt or confirm popup                         | -1     | 0    |           |
+| Submitting the form refreshes the page                                           | -2     | 0    |           |
+| Total                                                                            | 8      | 8    |           |
 
 | 5. Patient DB - Criteria                                                  | Points | Self | Evaluator |
 | ------------------------------------------------------------------------- | ------ | ---- | --------- |
-| The `name`, `id` & `dateOfBirth` is displayed for all patients            | 1      |      |           |
-| The data for each patient is displayed using a seperate component         | 2      |      |           |
-| The data is displayed using .map                                          | 1      |      |           |
-| There is a warning in the console regarding "key" props                   | -1     |      |           |
-| The patients are sorted by their `lastName` using .sort                   | 2      |      |           |
-| The data for the patients is fetched from the api, not hardcoded          | 1      |      |           |
-| Each patient displayed has a `show details` button                        | 0.5    |      |           |
+| The `name`, `id` & `dateOfBirth` is displayed for all patients            | 1      | 1    |           |
+| The data for each patient is displayed using a seperate component         | 2      | 2    |           |
+| The data is displayed using .map                                          | 1      | 1    |           |
+| There is a warning in the console regarding "key" props                   | -1     | 0    |           |
+| The patients are sorted by their `lastName` using .sort                   | 2      | 2    |           |
+| The data for the patients is fetched from the api, not hardcoded          | 1      | 1    |           |
+| Each patient displayed has a `show details` button                        | 0.5    | 0.5  |           |
 | The show details button links to the detail page for that patient         | 1.5    |      |           |
 | The page has a `select` input for the 3 doctors names and `all`           | 1      |      |           |
 | When `all` is selected, all patients are displayed                        | 1      |      |           |
@@ -97,8 +97,8 @@ Copy this this rubric into a file called: `ASSESSMENT.md`
 
 | 9. Finishing up - Criteria                                                       | Points | Self | Evaluator |
 | -------------------------------------------------------------------------------- | ------ | ---- | --------- |
-| Student performed an accurate self assessment (within 7 points of the evaluator) | 2      |      |           |
-| Student can reflect on their process by writing a reflection of ~200 words       | 2      |      |           |
-| Student has committed at least once per section                                  | 1      |      |           |
-| Student has pushed their repository using git                                    | 1      |      |           |
-| Total                                                                            | 6      |      |           |
+| Student performed an accurate self assessment (within 7 points of the evaluator) | 2      | 2    |           |
+| Student can reflect on their process by writing a reflection of ~200 words       | 2      | 2    |           |
+| Student has committed at least once per section                                  | 1      | 1    |           |
+| Student has pushed their repository using git                                    | 1      | 1    |           |
+| Total                                                                            | 6      | 6    |           |

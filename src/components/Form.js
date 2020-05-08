@@ -13,33 +13,39 @@ export default function Form() {
   };
 
   function submitForm() {
+    //did not manage to deal with submitting an empty form :(
     console.log("Submitting the form", formData);
     setFormSubmitted(true);
   }
 
   if (formSubmitted) {
-    return <h3>Thank you!</h3>;
+    return (
+      <h3>
+        Form successfully submitted.
+        <br /> Thank you!
+      </h3>
+    );
   }
 
   return (
     <form>
-      <div>
+      <p>
         <label>First name </label>
         <input type="text" name="firstName" onChange={handleInputChange} />
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Last name </label>
         <input type="text" name="lastName" onChange={handleInputChange} />
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Email </label>
         <input type="text" name="email" onChange={handleInputChange} />
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Phone </label>
         <input type="text" name="phoneNumber" onChange={handleInputChange} />
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Gender </label>
         <select name="gender" onChange={handleInputChange}>
           <option value="select">Select gender</option>
@@ -47,33 +53,18 @@ export default function Form() {
           <option value="male">Male</option>
           <option value="other">Other</option>
         </select>
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Date of birth </label>
         <input
           type="date"
           name="dateOfBirth"
           onChange={handleInputChange}
         ></input>
-      </div>
-      <div>
+      </p>
+      <p>
         <input type="button" value="Submit" onClick={submitForm} />
-      </div>
+      </p>
     </form>
   );
-
-  //   return (
-  //     <form>
-  //       <label>
-  //         Name:
-  //         <input type="text" name="name" />
-  //       </label>
-  //       <input type="submit" value="Submit" />
-  //       <label>
-  //         Name:
-  //         <input type="text" name="name" />
-  //       </label>
-  //       <input type="submit" value="Submit" />
-  //     </form>
-  //   );
 }
