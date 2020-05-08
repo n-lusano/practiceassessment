@@ -5,7 +5,7 @@ import DoctorList from "../components/DoctorList";
 
 export default function DoctorSchedule() {
   return (
-    <div style={{ justifyContent: "center", alignItems: "center" }}>
+    <div>
       <Title title="Who is on duty?" />
 
       <DoctorList />

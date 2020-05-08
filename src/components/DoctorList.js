@@ -3,15 +3,19 @@ import DoctorCard from "./DoctorCard";
 import axios from "axios";
 
 export default function DoctorList() {
-  const [doctors, set_doctors] = useState([]);
+  const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
     async function fetchDoctors() {
-      const response = await axios.get(
-        `https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors`
-      );
-      console.log(response.data);
-      set_doctors(response.data);
+      try {
+        const response = await axios.get(
+          `https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors`
+        );
+        // console.log(response.data);
+        setDoctors(response.data);
+      } catch (error) {
+        console.log(`This is the error message: ${error}`);
+      }
     }
 
     fetchDoctors();
