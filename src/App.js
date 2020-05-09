@@ -19,7 +19,7 @@ function App() {
         <Route path="/doctorschedule" component={DoctorSchedule} />
         <Route path="/patientsignup" component={PatientSignup} />
         <Route path="/patientdatabase" component={PatientDatabase} />
-        <Route path="/patientdetail/:id" component={PatientDetail} />
+        <Route path="/patientdetails/:id" component={PatientDetail} />
       </Switch>
     </div>
   );

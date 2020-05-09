@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PatientCard from "./PatientCard";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function PatientList() {
   const [patients, setPatients] = useState([]);
@@ -36,13 +37,19 @@ export default function PatientList() {
         <div>
           {sortedPatients.map((patient) => {
             return (
-              <PatientCard
-                key={patient.id}
-                lastName={patient.lastName}
-                firstName={patient.firstName}
-                id={patient.id}
-                dateOfBirth={patient.dateOfBirth}
-              />
+              <div key={patient.id}>
+                <PatientCard
+                  lastName={patient.lastName}
+                  firstName={patient.firstName}
+                  id={patient.id}
+                  dateOfBirth={patient.dateOfBirth}
+                />
+                <Link to={`/patientdetails/${patient.id}`}>
+                  <button type="button">
+                    <p>Show details</p>
+                  </button>
+                </Link>
+              </div>
             );
           })}
         </div>
