@@ -23,7 +23,7 @@ export default function DoctorList() {
 
   function displayDoctors() {
     if (doctors.length === 0) {
-      return "Loading...";
+      return <h2>Loading...</h2>;
     } else {
       return (
         <table>

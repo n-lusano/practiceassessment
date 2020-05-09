@@ -6,9 +6,9 @@ export default function PatientCard(props) {
       <p>
         Name: {props.firstName} {props.lastName}
         <br />
-        ID: {props.id}
+        Date of birth: {props.dob}
         <br />
-        Date of birth: {props.dateOfBirth}
+        ID: {props.id}
       </p>
     </div>
   );

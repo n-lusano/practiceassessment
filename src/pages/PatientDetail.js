@@ -7,15 +7,15 @@ export default function PatientDetail() {
   const [patientDetails, setPatientDetails] = useState([]);
   const [patientPrescriptions, setPatientPrescriptions] = useState([]);
   const routeParameters = useParams();
-  console.log(routeParameters);
+  // console.log(routeParameters);
 
   useEffect(() => {
     async function fetchPatientDetails(id) {
-      console.log("What's the id?", id);
+      // console.log("What's the id?", id);
       const response = await axios.get(
         `https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients/${id}`
       );
-      console.log(response.data);
+      // console.log(response.data);
       setPatientDetails(response.data);
       setPatientPrescriptions(response.data.prescriptions);
     }
@@ -25,14 +25,14 @@ export default function PatientDetail() {
   if (patientDetails.length === 0) {
     return (
       <div>
-        <Title title="Patient Database" />
-        <p>"Loading..."</p>
+        <Title title="Patient Details" />
+        <h2>Loading...</h2>
       </div>
     );
   } else {
     return (
       <div>
-        <Title title="Patient Database" />
+        <Title title="Patient Details" />
         <h2>
           {patientDetails.lastName}, {patientDetails.firstName}
         </h2>

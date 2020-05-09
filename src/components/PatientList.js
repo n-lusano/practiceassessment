@@ -4,58 +4,85 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function PatientList() {
-  const [patients, setPatients] = useState([]);
+  const [patientsCards, setPatientsCards] = useState([]);
+  const [selectDoc, setSelectDoc] = useState([]);
+  const [docId, setDocId] = useState("");
 
   useEffect(() => {
-    async function fetchPatients() {
-      try {
-        const response = await axios.get(
-          `https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients`
-        );
-        // console.log("Response.data test", response.data);
-        setPatients(response.data);
-      } catch (error) {
-        console.log(`This is the error message: ${error}`);
-      }
-    }
+    setPatientsCards("<h2>Loading ...</h2>");
 
-    fetchPatients();
+    const fetchData = async () => {
+      const data = await axios.get(
+        `https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/db`
+      );
+      // console.log("This is all the data", data);
+
+      setPatientsCards(data.data.patients);
+      setSelectDoc(data.data.doctors);
+    };
+
+    fetchData();
   }, []);
 
-  function displayPatients() {
-    function compareName(patientA, patientB) {
-      return patientA.lastName.localeCompare(patientB.lastName);
-    }
-
-    const patientArrayCopy = [...patients];
-    const sortedPatients = patientArrayCopy.sort(compareName);
-
-    if (sortedPatients.length === 0) {
-      return "Loading...";
-    } else {
-      return (
-        <div>
-          {sortedPatients.map((patient) => {
-            return (
-              <div key={patient.id}>
-                <PatientCard
-                  lastName={patient.lastName}
-                  firstName={patient.firstName}
-                  id={patient.id}
-                  dateOfBirth={patient.dateOfBirth}
-                />
-                <Link to={`/patientdetails/${patient.id}`}>
-                  <button type="button">
-                    <p>Show details</p>
-                  </button>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      );
-    }
+  if (patientsCards === "<h2>Loading ...</h2>") {
+    return <h2>Loading...</h2>;
+  }
+  function compareName(patient_a, patient_b) {
+    return patient_a.lastName.localeCompare(patient_b.lastName);
   }
 
-  return <div>{displayPatients()}</div>;
+  const patientsArrayCopy = [...patientsCards];
+  const sortedPatients = patientsArrayCopy.sort(compareName);
+
+  const filteredPatients = sortedPatients.filter((patient) => {
+    if (!docId) {
+      return true;
+    }
+
+    const match = patient.doctorId === docId;
+
+    if (match) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  const changeFilter = (event) => {
+    const number = parseInt(event.target.value);
+    setDocId(number);
+  };
+
+  return (
+    <div>
+      <label>Doctor:</label>{" "}
+      <select value={docId} onChange={changeFilter}>
+        <option value={0}>All</option>
+        {selectDoc.map((Doc) => {
+          return (
+            <option key={Doc.id} value={Doc.id}>
+              {Doc.doctor}
+            </option>
+          );
+        })}
+      </select>
+      {filteredPatients.map((Patient) => {
+        return (
+          <div key={Patient.id}>
+            <PatientCard
+              firstName={Patient.firstName}
+              lastName={Patient.lastName}
+              id={Patient.id}
+              dob={Patient.dateOfBirth}
+            ></PatientCard>
+            <Link to={`/patientDetails/${Patient.id}`}>
+              <button>Show details</button>
+            </Link>
+            <br />
+            <br />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
