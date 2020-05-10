@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/Global.css";
 
 export default function Title(props) {
   const { title } = props;

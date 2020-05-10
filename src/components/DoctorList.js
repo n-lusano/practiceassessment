@@ -26,24 +26,34 @@ export default function DoctorList() {
       return <h2>Loading...</h2>;
     } else {
       return (
-        <table>
-          <thead>
-            <tr>
-              <th>Doctor</th>
-              <th>Availability</th>
-            </tr>
-          </thead>
-          {doctors.map((doctor) => {
-            const availability = doctor.onDuty ? "Available" : "Not available";
-            return (
-              <DoctorCard
-                key={doctor.id}
-                doctor={doctor.doctor}
-                onDuty={availability}
-              />
-            );
-          })}
-        </table>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Doctor</th>
+                <th>Availability</th>
+              </tr>
+            </thead>
+            {doctors.map((doctor) => {
+              const availability = doctor.onDuty
+                ? "Available"
+                : "Not available";
+              return (
+                <DoctorCard
+                  key={doctor.id}
+                  doctor={doctor.doctor}
+                  onDuty={availability}
+                />
+              );
+            })}
+          </table>
+        </div>
       );
     }
   }

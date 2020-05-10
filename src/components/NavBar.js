@@ -1,11 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { BrowserRouter as Route, NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
     <div>
       <NavLink
-        activeStyle={{ fontWeight: "bold", color: "black" }}
+        style={{
+          textDecoration: "none",
+          color: "#21556B",
+        }}
+        activeStyle={{ fontWeight: "bold", color: "#153543" }}
         to="/"
         exact
       >
@@ -13,21 +17,33 @@ export default function NavBar() {
       </NavLink>
       {" | "}
       <NavLink
-        activeStyle={{ fontWeight: "bold", color: "black" }}
+        style={{
+          textDecoration: "none",
+          color: "#21556B",
+        }}
+        activeStyle={{ fontWeight: "bold", color: "#153543" }}
         to="/doctorschedule"
       >
         Doctor Schedule
       </NavLink>
       {" | "}
       <NavLink
-        activeStyle={{ fontWeight: "bold", color: "black" }}
+        style={{
+          textDecoration: "none",
+          color: "#21556B",
+        }}
+        activeStyle={{ fontWeight: "bold", color: "#153543" }}
         to="/patientsignup"
       >
         Patient Signup
       </NavLink>
       {" | "}
       <NavLink
-        activeStyle={{ fontWeight: "bold", color: "black" }}
+        style={{
+          textDecoration: "none",
+          color: "#21556B",
+        }}
+        activeStyle={{ fontWeight: "bold", color: "#153543" }}
         to="/patientdatabase"
       >
         Patient Database
